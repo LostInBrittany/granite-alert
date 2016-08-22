@@ -75,8 +75,7 @@ Allowed values for `level`: `info`, `warning`, `danger` and `success`
            */
           level: {
             type: String,
-            value: "info",
-            observer: "_onValueChange"
+            value: "info"
           },
 
           _allowedValues: {
@@ -85,9 +84,13 @@ Allowed values for `level`: `info`, `warning`, `danger` and `success`
           }
         },
 
+        observers: [
+          "_onValueChange(level, _onValueChange)"
+        ],
+
         // Observers
         _onValueChange: function() {
-          if (this._allowedValues.indexOf(this.value) < 0) {
+          if (this._allowedValues && this._allowedValues.indexOf(this.value) < 0) {
             this.level = this._allowedValues[0];  // Set default value for `level` if unknown value is given
           }
         },

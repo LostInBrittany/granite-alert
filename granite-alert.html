@@ -90,7 +90,7 @@ Allowed values for `level`: `info`, `warning`, `danger` and `success`
 
         // Observers
         _onValueChange: function() {
-          if (this._allowedValues && this._allowedValues.indexOf(this.value) < 0) {
+          if (this._allowedValues && this._allowedValues.indexOf(this.level) < 0) {
             this.level = this._allowedValues[0];  // Set default value for `level` if unknown value is given
           }
         },

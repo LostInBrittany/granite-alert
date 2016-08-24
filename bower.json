@@ -8,8 +8,7 @@
     "web-component",
     "web-components",
     "polymer",
-    "lostinbrittany",
-    "ace"
+    "lostinbrittany"
   ],
   "main": "granite-alert.html",
   "license": "MIT",

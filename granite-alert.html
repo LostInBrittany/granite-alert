@@ -35,6 +35,9 @@ Allowed values for `level`: `info`, `warning`, `danger` and `success`
           display: block;
           width: 100%;
         }
+        .hidden {
+          display: none;
+        }
         .alert {
           padding: 15px;
           margin-bottom: 20px;
@@ -62,8 +65,7 @@ Allowed values for `level`: `info`, `warning`, `danger` and `success`
           border-color: #ebccd1;
        }
       </style>
-
-      <div class$="alert {{level}}">
+      <div class$="alert {{level}} {{_hidden}}">
         <content></content>
       </div>
     </template>
@@ -82,11 +84,23 @@ Allowed values for `level`: `info`, `warning`, `danger` and `success`
             type: String,
             value: "info"
           },
+          /**
+           * If true, the alert is not shown
+           */
+          hide: {
+            type: Boolean,
+            value: false,
+          },
+
+          _hidden: {
+            type: String,
+            computed: "_getHidden(hide)"
+          },
 
           _allowedValues: {
             type: Array,
             value: [ "info", "warning", "danger", "success" ]
-          }
+          },
         },
 
         observers: [
@@ -98,6 +112,14 @@ Allowed values for `level`: `info`, `warning`, `danger` and `success`
           if (this._allowedValues && this._allowedValues.indexOf(this.level) < 0) {
             this.level = this._allowedValues[0];  // Set default value for `level` if unknown value is given
           }
+        },
+
+        // Computed properties
+        _getHidden: function() {
+          if (this.hide) {
+            return "hidden";
+          }
+          return "";
         },
       });
     </script>

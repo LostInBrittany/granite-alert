@@ -59,6 +59,41 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   </head>
 
   <body unresolved>
+
+    <dom-module is="example-hidden">
+      <template>
+        <style>
+          :host {
+            display: block;
+            width: 100%;
+          }
+          input {
+            margin-bottom: 10px;
+          }
+        </style>
+        <input type="button" on-click="toggle" value="Click here">
+        <granite-alert level="success" hide="{{hide}}">
+          Well done!
+        </granite-alert>
+      </template>
+      <script>
+        Polymer({
+          is: "example-hidden",
+          properties: {
+            hide: {
+              type: Boolean,
+              value: true,
+            }
+          },
+          toggle: function() {
+            console.debug("[example-hidden] toggle");
+            this.hide = !this.hide;
+          }
+        });
+      </script>
+    </dom-module>  
+
+
     <div class="vertical-section-container centered">
 
       <h3>granite-alert, level info</h3>
@@ -97,6 +132,20 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
         </template>
       </demo-snippet>
 
+      <h3>granite-alert, hidden</h3>
+      <demo-snippet class="centered-demo">
+        <template>
+          <example-hidden>
+            <input type="button" on-click="toggle" value="Click here">
+            <granite-alert level="success" hide="{{hide}}">
+              Well done!
+            </granite-alert>
+          </example-hidden>
+        </template>
+      </demo-snippet>
     </div>
+
+
+
   </body> 
 </html>     

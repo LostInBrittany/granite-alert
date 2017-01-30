@@ -1,8 +1,28 @@
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/LostInBrittany/granite-alert)
+
 # granite-alert
 
 > A set of [Bootstrap-like alert](http://getbootstrap.com/components/#alerts) elements.
-> 
+>
 > Polymer 1.5 ready
+
+
+## Usage example
+
+<!--
+```
+<custom-element-demo>
+  <template>
+      <link rel="import" href="./granite-alert.html">
+      <next-code-block></next-code-block>
+  </template>    
+</custom-element-demo>
+```
+-->
+```html
+  <granite-alert>Information is the key</granite-alert>
+  <granite-alert level="warning">Be careful, my friend...</granite-alert>
+```
 
 
 ## Install
@@ -38,7 +58,7 @@ Or [download as ZIP](https://github.com/LostInBrittany/granite-alert/archive/gh-
 
 Attribute     | Type      | Default  | Description
 ---           | ---       | ---      | ---
-`level`       | *String*  | `"info"` | The level of the alert 
+`level`       | *String*  | `"info"` | The level of the alert
 
 Alowed values for `level`: `info`, `warning`, `danger` and `success`
 

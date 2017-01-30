@@ -9,21 +9,21 @@
 
 ## Usage example
 
-<!--
+<!---
 ```
 <custom-element-demo>
   <template>
-      <link rel="import" href="./granite-alert.html">
-      <next-code-block></next-code-block>
-  </template>    
+    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="granite-alert.html">
+    <next-code-block></next-code-block>
+  </template>
 </custom-element-demo>
 ```
 -->
 ```html
-  <granite-alert>Information is the key</granite-alert>
-  <granite-alert level="warning">Be careful, my friend...</granite-alert>
+<granite-alert level="warning">Be careful, my friend...</granite-alert>
+<granite-alert>Information is key</granite-alert>
 ```
-
 
 ## Install
 

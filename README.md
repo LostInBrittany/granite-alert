@@ -4,7 +4,8 @@
 
 > A set of [Bootstrap-like alert](http://getbootstrap.com/components/#alerts) elements.
 >
-> Polymer 1.5 ready
+>
+> Hybrid Polymer element, 1.x-2.x ready
 
 
 ## Usage example
@@ -38,7 +39,7 @@ Or [download as ZIP](https://github.com/LostInBrittany/granite-alert/archive/gh-
 1. Import Web Components' polyfill (if needed):
 
     ```html
-    <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+    <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
     ```
 
 2. Import Custom Element:

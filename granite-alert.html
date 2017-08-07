@@ -27,7 +27,7 @@ Allowed values for `level`: `info`, `warning`, `danger` and `success`
 @homepage index.html
 @demo demo/index.html
 -->
-<dom-module is="granite-alert">
+<dom-module id="granite-alert">
 
     <template>
       <style>
@@ -65,7 +65,7 @@ Allowed values for `level`: `info`, `warning`, `danger` and `success`
        }
       </style>
       <div class$="alert {{level}} {{_hidden}}">
-        <content></content>
+        <slot></slot>
       </div>
     </template>
 

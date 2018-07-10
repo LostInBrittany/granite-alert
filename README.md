@@ -2,10 +2,11 @@
 
 # granite-alert
 
-> A set of [Bootstrap-like alert](http://getbootstrap.com/components/#alerts) elements.
+> A set of [Bootstrap-like alert](http://getbootstrap.com/components/#alerts) elements
 >
+> Built on [lit-element](https://github.com/Polymer/lit-element)
 >
-> Hybrid Polymer element, 1.x-2.x ready
+> The old Polymer 2.x-1.x version is available on the [`polymer-hybrid` branch](https://github.com/LostInBrittany/granite-alert/tree/polymer-hybrid).
 
 
 ## Usage example
@@ -26,33 +27,38 @@
 <granite-alert>Information is key</granite-alert>
 ```
 
+
 ## Install
 
-Install the component using [Bower](http://bower.io/):
+
+Install the component using [npm](https://www.npmjs.com/):
 
 ```sh
-$ bower install LostInBrittany/granite-alert --save
+$ npm i @granite-elements/granite-alert --save
 ```
 
-Or [download as ZIP](https://github.com/LostInBrittany/granite-alert/archive/gh-pages.zip).## Usage
+Once installed, import it in your application:
 
-1. Import Web Components' polyfill (if needed):
+import '@granite-elements/granite-alert/granite-alert.js';
 
-    ```html
-    <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
-    ```
 
-2. Import Custom Element:
 
-    ```html
-    <link rel="import" href="bower_components/granite-alert/granite-alert.html">
-    ```
+## Running demos and tests in browser
 
-3. Start using it!
+1. Fork the `granite-alert` repository and clone it locally.
 
-    ```html
-    <granite-alert level="danger">This is a serious alert!</granite-alert>
-    ```
+1. Make sure you have [npm](https://www.npmjs.com/) 
+and the [Polymer CLI](https://www.polymer-project.org/3.0/docs/tools/polymer-cli) installed.
+
+1. When in the `granite-alert` directory, run `npm install` to install dependencies.
+
+1. Serve the project using Polyumer CLI:
+
+    `polymer serve --module-resolution node --component-dir node_modules`
+
+1. Open the demo in the browser
+
+    - http://127.0.0.1:8080/components/@greanite-elements/granite-alert/demo
 
 
 ## Attributes

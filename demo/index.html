@@ -1,152 +1,41 @@
-<!DOCTYPE html>
-<!--
-@license MIT
-Copyright (c) 2015 Horacio "LostInBrittany" Gonzalez
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
--->
+<!doctype html>
 <html lang="en">
-<head>
-    <script src="bower_components/webcomponentsjs/webcomponents-lite.js">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
     <title>granite-alert demo</title>
 
-    <link rel="icon" href="./favicon.ico" type="image/x-icon"/>
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon"/>
+    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
 
-    <script>
-
-      // setup Polymer options
-      window.Polymer = {lazyRegister: true, dom: 'shadow'};
-
-      // load webcomponents polyfills
-      (function() {
-        if ('registerElement' in document
-            && 'import' in document.createElement('link')
-            && 'content' in document.createElement('template')) {
-          // browser has web components
-        } else {
-          // polyfill web components
-          var e = document.createElement('script');
-          e.src = '../webcomponentsjs/webcomponents-lite.min.js';
-          document.head.appendChild(e);
-        }
-      })();
-
-
+    <script type="module">
+      import '@polymer/iron-demo-helpers/demo-pages-shared-styles';
+      import '@polymer/iron-demo-helpers/demo-snippet';
     </script>
-    <link   rel="import" href="../../polymer/polymer.html">
 
+    <script type="module" src="../granite-alert.js"></script>
 
-    <link rel="import" href="../../paper-styles/color.html">
-    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
-    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
-    <link rel="import" href="../../iron-icons/iron-icons.html">
-
-    <link rel="import" href="../../granite-alert/granite-alert.html">
-
-    <style is="custom-style" include="demo-pages-shared-styles">
-      .spacer-10 { width:100%; height:10px; }
-      .spacer-50 { width:100%; height:50px; }
-      .vertical-section-container {
-        max-width: 550px;
-      }
-    </style>
+    <custom-style>
+      <style is="custom-style" include="demo-pages-shared-styles">
+      </style>
+    </custom-style>
   </head>
-
-  <body unresolved>
-
-    <dom-module id="example-hidden">
-      <template>
-        <style>
-          :host {
-            display: block;
-            width: 100%;
-          }
-          input {
-            margin-bottom: 10px;
-          }
-        </style>
-        <input type="button" on-click="toggle" value="Click here">
-        <granite-alert level="success" hide="{{hide}}">
-          Well done!
-        </granite-alert>
-      </template>
-      <script>
-        Polymer({
-          is: "example-hidden",
-          properties: {
-            hide: {
-              type: Boolean,
-              value: true,
-            }
-          },
-          toggle: function() {
-            console.debug("[example-hidden] toggle");
-            this.hide = !this.hide;
-          }
-        });
-      </script>
-    </dom-module>
-
-
+  <body>
     <div class="vertical-section-container centered">
-
-      <h3>granite-alert, level info</h3>
-      <demo-snippet class="centered-demo">
+      <h3>Basic granite-alert demo</h3>
+      <demo-snippet>
         <template>
-          <granite-alert>
-            Information is the key
-          </granite-alert>
-        </template>
-      </demo-snippet>
+          <granite-alert level="success">Well done!</granite-alert>
 
-      <h3>granite-alert, level warning</h3>
-      <demo-snippet class="centered-demo">
-        <template>
-          <granite-alert level="warning">
-            Be careful, my friend...
-          </granite-alert>
-        </template>
-      </demo-snippet>
+          <granite-alert level="info">A very informative text</granite-alert>
 
-      <h3>granite-alert, level danger</h3>
-      <demo-snippet class="centered-demo">
-        <template>
-          <granite-alert level="danger">
-            Danger everywhere!
-          </granite-alert>
-        </template>
-      </demo-snippet>
+          <granite-alert level="warning">Be careful...</granite-alert>
 
-      <h3>granite-alert, level success</h3>
-      <demo-snippet class="centered-demo">
-        <template>
-          <granite-alert level="success">
-            Well done!
-          </granite-alert>
-        </template>
-      </demo-snippet>
+          <granite-alert level="danger">Ouch!</granite-alert>
 
-      <h3>granite-alert, hidden</h3>
-      <demo-snippet class="centered-demo">
-        <template>
-          <example-hidden>
-            <input type="button" on-click="toggle" value="Click here">
-            <granite-alert level="success" hide="{{hide}}">
-              Well done!
-            </granite-alert>
-          </example-hidden>
+          <granite-alert level="danger" hide>I am invisible...</granite-alert>
         </template>
       </demo-snippet>
     </div>
-
-
-
   </body>
 </html>

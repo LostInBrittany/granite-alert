@@ -4,17 +4,16 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/LostInBrittany/granite-alert"
-  },  
+  },
   "description": "Bootstrap-like alerts",
   "main": "granite-alert.js",
   "dependencies": {
-    "@polymer/lit-element": "^0.5.2",
-    "@polymer/polymer": "^3.0.0"
+    "@polymer/lit-element": "^0.5.2"
   },
   "devDependencies": {
     "@polymer/iron-demo-helpers": "^3.0.0-pre.19",
     "@webcomponents/webcomponentsjs": "^2.0.0",
     "wct-browser-legacy": "^1.0.0"
   },
-  "version": "2.0.1"
+  "version": "2.0.2"
 }

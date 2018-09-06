@@ -25,7 +25,8 @@
       "no-var": "off",
       "no-console": "off",
       "object-curly-spacing": "off",
-      "require-jsdoc": "off"
+      "require-jsdoc": "off",
+      "padded-blocks": "off"
     },
     "globals": {
       "Polymer": true

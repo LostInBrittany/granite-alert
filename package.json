@@ -16,12 +16,12 @@
   "author": "Horacio Gonzalez <horacio.gonzalez@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@polymer/lit-element": "^0.5.2"
+    "@polymer/lit-element": "^0.6.0-dev.6"
   },
   "devDependencies": {
     "@polymer/iron-demo-helpers": "^3.0.0-pre.19",
     "@webcomponents/webcomponentsjs": "^2.0.0",
     "wct-browser-legacy": "^1.0.0"
   },
-  "version": "2.0.4"
+  "version": "2.1.0"
 }

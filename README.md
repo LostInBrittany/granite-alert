@@ -35,7 +35,7 @@
 Install the component using [npm](https://www.npmjs.com/):
 
 ```sh
-$ npm i @granite-elements/granite-alert --save
+$ npm i @granite-elements/granite-alert 
 ```
 
 Once installed, import it in your application:
@@ -55,7 +55,7 @@ and the [Polymer CLI](https://www.polymer-project.org/3.0/docs/tools/polymer-cli
 
 1. Serve the project using Polyumer CLI:
 
-    `polymer serve --module-resolution node --component-dir node_modules`
+    `polymer serve --npm`
 
 1. Open the demo in the browser
 

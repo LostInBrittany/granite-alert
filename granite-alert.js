@@ -31,15 +31,41 @@ import { LitElement, html } from '@polymer/lit-element';
  * @homepage index.html
  * @demo demo/index.html
  * @customElement
- * @polymer
  * @demo demo/index.html
  */
 class GraniteAlert extends LitElement {
-  _render({level, hide}) {
 
+  static get properties() {
+    return {
+     level: { type: String },
+     hide: { type: Boolean },
+    };
+  }
+
+  constructor() {
+    super();
+    this._allowedLevels = ['info', 'warning', 'danger', 'success'];
+    this.level = 'info';
+    this.hide = false;
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+  }
+
+  render() {
     if (this.hide) {
       return;
     }
+    return html`
+      ${this._renderStyles()}
+      <div class="alert ${this._checkLevel(this.level)}">
+        <slot></slot>
+      </div>
+    `;
+  }
+
+  _renderStyles() {
     return html`
       <style>
         :host {
@@ -73,31 +99,9 @@ class GraniteAlert extends LitElement {
           color: #a94442;
           background-color: #f2dede;
           border-color: #ebccd1;
-       }
+      }
       </style>
-      <div class$="alert ${this._checkLevel(this.level)}">
-        <slot></slot>
-      </div>
     `;
-  }
-
-  static get properties() {
-    return {
-     level: String,
-     hide: Boolean,
-    };
-  }
-
-  constructor() {
-    super();
-    this._allowedLevels = ['info', 'warning', 'danger', 'success'];
-  }
-
-  connectedCallback() {
-    super.connectedCallback();
-    if (!this.level) {
-      this.level = 'info';
-    }
   }
 
   _isHidden() {
@@ -109,7 +113,7 @@ class GraniteAlert extends LitElement {
 
   _checkLevel() {
     if (!this.level || this._allowedLevels.indexOf(this.level) < 0) {
-      return this._allowedLevels[0];  // Set default value for `level` if unknown value is given
+      return this._allowedLevels[0]; // Set default value for `level` if unknown value is given
     }
     return this.level;
   }

@@ -16,8 +16,8 @@
 ```
 <custom-element-demo>
   <template>
-    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
-    <script src="granite-alert.js"></script>
+    <script src="@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+    <script src="@granite-elements/granite-alert/granite-alert.js"></script>
     <next-code-block></next-code-block>
   </template>
 </custom-element-demo>

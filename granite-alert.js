@@ -39,6 +39,7 @@ class GraniteAlert extends LitElement {
     return {
      level: { type: String },
      hide: { type: Boolean },
+     debug: { type: Boolean },
     };
   }
 
@@ -51,6 +52,19 @@ class GraniteAlert extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
+  }
+
+  firstUpdated() {
+    if (this.debug) {
+      console.log('[granite-alert] firstUpdated');
+    }
+  }
+  
+  shouldUpdate() {
+    if (this.debug) {
+      console.log('[granite-alert] shouldUpdate');
+    }
+    return true;
   }
 
   render() {
